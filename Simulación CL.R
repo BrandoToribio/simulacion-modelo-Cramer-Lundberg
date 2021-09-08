@@ -39,7 +39,7 @@ simular <- function(u,c,t,lambda_Nt,lambda_Yj,no_simulaciones){
                              val = val2)
   simulaciones
 }
-# Simulación 1 #################################################################
+# SimulaciÃ³n 1 #################################################################
 grafica <- simular(0,1,50,0.9,1,10)
 ggplot(grafica, aes(x=t, y=val, group=sim)) +
   geom_line(aes(color=sim)) + theme(legend.position="none") +
@@ -50,7 +50,7 @@ ggplot(grafica, aes(x=t, y=val, group=sim)) +
   geom_abline(intercept = 0, slope = (1 - (0.9*(1/1))), color="red",size=1) +
   scale_x_continuous(name="tiempo") +
   scale_y_continuous(name="Ct   Balance al tiempo t")
-# Simulación 3 #################################################################
+# SimulaciÃ³n 3 #################################################################
 reclamaciones <- function(t,lambda_Nt,lambda_Yj){
   if (t == 0){
     Xt = 0
@@ -109,11 +109,11 @@ graficacion <- function(lambda,alpha,c,n){ #n: Monto maximo
               xlab = "Monto inicial", ylab = "Probabilidad de ruina") + 
           xlim(0, n) + ylim(0,1))
 }
-# Gráfica 1 ####################################################################
+# GrÃ¡fica 1 ####################################################################
 graficacion(lambda = 0.9,alpha = 1,c = 1,n = 35) + 
   geom_point(aes(x=0, y=0.9), colour="blue") +
   geom_point(aes(x=8, y=0.4043961), colour="red")
-# Gráfica 2 ####################################################################
+# GrÃ¡fica 2 ####################################################################
 graficacion(lambda = 1,alpha = 2,c = 1,n = 8) + 
   geom_point(aes(x=0, y=0.5), colour="magenta")
 
